@@ -1,0 +1,78 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+<script type="text/javascript">
+function initViz() {
+  var containerDiv = document.getElementById("vizContainer"),
+      url = "http://public.tableau.com/views/RegionalSampleWorkbook/Storms",
+      options = {
+        hideTabs: true,
+        onFirstInteractive: function () {
+          console.log("Run this code when the viz has finished loading.");
+        }
+      };
+
+  // Create a viz object and embed it in the container div.
+  var viz = new tableau.Viz(containerDiv, url, options);
+}
+</script>
+
+</head>
+
+  <body onload="initViz();">
+    <header>
+        <h1>
+<span>嵌入 JavaScript API </span>
+</h1>
+        <h3>
+使用 Tableau 嵌入 API 将 Tableau 可视化集成到您自己的 Web 应用程序中</h3>
+    </header>
+    <div class="flex">
+        <nav>
+            <a class="logo" href="#">
+                <h2>学习资源</h2>
+            </a>
+
+            <a href="https://mp.weixin.qq.com/s?__biz=MzkxNzM4MDQzMg==&mid=2247486799&idx=1&sn=ee5b0393e8bd693e2743eaae9550200d&chksm=c140c170f63748669e6d68a329aab6a89a055b1f277b1f9ea8ebe005cf77d4d4c1b6232e5184&token=1467488687&lang=zh_CN#rd">
+                <i class="fa fa-home fa-lg"></i>
+                <span>Tableau 公众号</span>
+            </a>
+
+            <a href=" https://www.bilibili.com/video/BV1Ya411L75n/?vd_source=f2877075bd00f799560909c9e0b91a10">
+                <i class="fa fa-user fa-lg"></i>
+                <span>B站视频</span>
+            </a>
+
+            <a href="https://public.tableau.com/app/profile/thexing">
+                <i class="fa fa-envelope-o fa-lg"></i>
+                <span>Tableau public</span>
+            </a>
+
+            <a hrefhttps://blog.csdn.net/qq_43674360/category_11487202.html?spm=1001.2014.3001.5482">
+                <i class="fa fa-html5 fa-lg"></i>
+                <span>博客</span>
+            </a>
+
+            <a href="https://www.tableau.com/zh-cn/developer/learning/tableau-javascript-api">
+                <i class="fa fa-css3 fa-lg"></i>
+                <span>JavaScript API</span>
+            </a>
+
+
+            <a href="https://zhuanlan.zhihu.com/p/420620906">
+                <i class="fa fa-question-circle fa-lg"></i>
+                <span>关于我们</span>
+            </a>
+        </nav>
+        <div class="contents">
+            <h1>Tableau 嵌入API学习</h1>
+
+  <div id="vizContainer" style="width:100%; height:auto;"></div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
