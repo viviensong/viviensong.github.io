@@ -40,7 +40,9 @@ h2 {
 }
 
 h3 {
-  width: 100%;
+  /* width: 100%; */
+  text-align: center;
+  /* margin-right: 200px; */
   margin-top: 20px;
   font-size: 18px;
   font-family: 'myFont2';

@@ -116,9 +116,13 @@
       </script>
     </div>
 </div>
-<!-- 涉及的app -->
-<div class="box" style="width:100%;margin:0 auto">
-    <div id="container" style="height:400px"></div>
+
+<!-- 虚拟财产类型 -->
+<div class="box" style="width:100%;height:360px;margin:0 auto">
+    <div style="float: right;width:50%">
+      <h3>遗嘱中的虚拟财产类型</h3>
+    </div>
+    <div id="container" style="width:50%;height:360px;margin:0"></div>
     <script type="text/javascript">
       var dom = document.getElementById('container');
       var myChart = echarts.init(dom, 'purple-passion', {
@@ -140,106 +144,254 @@
         money: 'path://M597.504 381.952c-73.216 0-132.608 59.392-132.608 132.608 0 73.216 59.392 132.608 132.608 132.608 73.216 0 132.608-59.392 132.608-132.608 0.512-72.704-59.392-132.608-132.608-132.608z m13.312 217.088v28.16H583.68v-26.112c-18.432-1.024-36.352-6.144-46.592-11.776l8.192-32.256c11.776 6.144 27.648 12.288 45.568 12.288 15.872 0 26.624-6.144 26.624-16.896 0-10.24-8.704-16.896-29.184-24.064-29.184-9.728-49.664-23.552-49.664-50.176 0-24.576 16.896-43.52 46.592-49.152v-26.112h27.136v24.064c17.92 0.512 30.72 4.608 39.936 9.216l-8.192 31.232c-6.656-3.072-19.968-9.728-39.424-9.728-17.92 0-23.552 8.192-23.552 15.872 0 8.704 9.728 14.848 33.28 23.552 32.768 11.776 45.568 26.624 45.568 51.712-0.512 24.064-17.408 45.056-49.152 50.176z',
         zfb: 'path://M492.343 777.511c-67.093 32.018-144.129 51.939-227.552 32.27-83.424-19.678-142.626-73.023-132.453-171.512 10.192-98.496 115.478-132.461 202.07-132.461 86.622 0 250.938 56.122 250.938 56.122s13.807-30.937 27.222-66.307c13.405-35.365 17.21-63.785 17.21-63.785H279.869v-35.067h169.995v-67.087l-211.925 1.526v-44.218h211.925v-100.63h111.304v100.629H788.35v44.218l-227.181 1.524v62.511l187.584 1.526s-3.391 35.067-27.17 98.852c-23.755 63.783-46.061 96.312-46.061 96.312L960 685.279V243.2C960 144.231 879.769 64 780.8 64H243.2C144.231 64 64 144.231 64 243.2v537.6C64 879.769 144.231 960 243.2 960h537.6c82.487 0 151.773-55.806 172.624-131.668L625.21 672.744s-65.782 72.748-132.867 104.767z',
         else: 'path://M736.1792 456.704c-19.92704-11.52512-44.48256-11.52512-64.40448 0s-32.19968 32.82432-32.19968 55.87456 12.27264 44.34944 32.19968 55.86944c19.92704 11.52512 44.48256 11.52512 64.40448 0 19.93216-11.52 32.19968-32.8192 32.19968-55.86944S756.11136 468.22912 736.1792 456.704zM997.71904 357.7088c-10.9312-34.4064-25.1904-67.37408-43.18208-98.6624-12.16512-21.15584-40.35072-22.93248-54.0416-3.39968-8.56064 12.20096-7.19872 24.61184-0.19968 37.36064 59.61216 108.55424 74.09152 223.05792 40.13056 342.07744-68.73088 240.91648-318.67904 377.15456-558.4128 305.82784-175.66208-52.25472-303.3344-211.02592-316.88192-394.368-5.53984-74.97728 6.90688-146.90816 36.8896-215.91552 82.54976-189.9776 293.2224-299.58656 495.7696-257.8176 46.5664 9.6 90.61888 25.79968 131.99872 49.2544 7.08608 4.00896 14.40768 6.69184 22.68672 5.41184 13.91104-2.15552 24.73472-12.30336 27.22816-25.43104 2.7392-14.39232-3.70176-27.47392-17.72544-35.25632C647.23456 3.03616 525.46048-15.55456 397.50656 13.0816 165.39136 65.02912 0.05632 273.18272 0 511.65184c-0.00512 38.14912 4.0192 75.87328 12.42112 113.06496 65.00864 287.8208 359.52128 461.42976 642.048 378.55232 199.6288-58.56256 343.83872-232.51456 364.79488-440.70912C1026.2784 492.88704 1018.94144 424.51456 997.71904 357.7088zM478.62784 456.704c-19.92704 11.52512-32.2048 32.82432-32.2048 55.87456 0 35.63008 28.83584 64.51712 64.40448 64.51712s64.40448-28.88704 64.40448-64.51712c0-23.05024-12.27264-44.34944-32.2048-55.87456C523.10528 445.17888 498.55488 445.17888 478.62784 456.704zM285.60896 456.704c-19.92704 11.52512-32.2048 32.82432-32.2048 55.87456s12.27264 44.34944 32.2048 55.86944c19.92704 11.52512 44.47744 11.52512 64.40448 0 19.92704-11.52 32.19968-32.8192 32.19968-55.86944s-12.27264-44.34944-32.19968-55.87456C330.0864 445.17888 305.53088 445.17888 285.60896 456.704z',
-  };
-    option = {
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'none'
-        },
-        formatter: function (params) {
-          return params[0].name + ': ' + params[0].value;
-        }
-      },
-      xAxis: {
-        data: ['微信', 'QQ', '支付宝', '游戏账号', '虚拟货币', '其他', '淘宝店'],
-        axisTick: { show: false },
-        axisLine: { show: false },
-        axisLabel: {
-          color: '#8fd3e8'
-        }
-      },
-      yAxis: {
-        splitLine: { show: false },
-        axisTick: { show: false },
-        axisLine: { show: false },
-        axisLabel: { show: false }
-      },
-      color: ['#8fd3e8'],
-      series: [
-        {
-          name: 'hill',
-          type: 'pictorialBar',
-          barCategoryGap: '-130%',
-          // symbol: 'path://M0,10 L10,10 L5,0 L0,10 z',
-          symbol: 'path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z',
-          itemStyle: {
-            opacity: 0.5
+      };
+      option = {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'none'
           },
-          emphasis: {
+          formatter: function (params) {
+            return params[0].name + ': ' + params[0].value;
+          }
+        },
+        xAxis: {
+          data: ['微信', 'QQ', '支付宝', '游戏账号', '虚拟货币', '其他', '淘宝店'],
+          axisTick: { show: false },
+          axisLine: { show: false },
+          axisLabel: {
+            color: '#09F7F7'
+          }
+        },
+        yAxis: {
+          splitLine: { show: false },
+          axisTick: { show: false },
+          axisLine: { show: false },
+          axisLabel: { show: false }
+        },
+        color: ['#09F7F7'],
+        series: [
+          {
+            name: 'hill',
+            type: 'pictorialBar',
+            barCategoryGap: '-130%',
+            // symbol: 'path://M0,10 L10,10 L5,0 L0,10 z',
+            symbol: 'path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z',
             itemStyle: {
-              opacity: 1
-            }
+              opacity: 0.7
+            },
+            emphasis: {
+              itemStyle: {
+                opacity: 1
+              }
+            },
+            color: ['#F28CF7'],
+            data: [112, 107, 93, 75, 34, 33, 18],
+            z: 10
           },
-          color: ['#f394f8'],
-          data: [112, 107, 93, 75, 34, 33, 18],
-          z: 10
-        },
-        {
-          name: 'glyph',
-          type: 'pictorialBar',
-          barGap: '-100%',
-          symbolPosition: 'end',
-          symbolSize: 50,
-          symbolOffset: [0, '-120%'],
-          data: [
-            {
-              value: 112,
-              symbol: pathSymbols.weixin,
-              symbolSize: [45, 40]
-            },
-            {
-              value: 107,
-              symbol: pathSymbols.qq,
-              symbolSize: [45, 45]
-            },
-            {
-              value: 93,
-              symbol: pathSymbols.zfb,
-              symbolSize: [40, 40]
-            },
-            {
-              value: 75,
-              symbol: pathSymbols.game,
-              symbolSize: [42, 38]
-            },
-            {
-              value: 34,
-              symbol: pathSymbols.money,
-              symbolSize: [40, 40]
-            },
-            {
-              value: 33,
-              symbol: pathSymbols.else,
-              symbolSize: [40, 40]
-            },
-            {
-              value: 18,
-              symbol: pathSymbols.taobao,
-              symbolSize: [40, 40]
-            },
+          {
+            name: 'glyph',
+            type: 'pictorialBar',
+            barGap: '-100%',
+            symbolPosition: 'end',
+            symbolSize: 50,
+            symbolOffset: [0, '-120%'],
+            data: [
+              {
+                value: 112,
+                symbol: pathSymbols.weixin,
+                symbolSize: [45, 40]
+              },
+              {
+                value: 107,
+                symbol: pathSymbols.qq,
+                symbolSize: [45, 45]
+              },
+              {
+                value: 93,
+                symbol: pathSymbols.zfb,
+                symbolSize: [40, 40]
+              },
+              {
+                value: 75,
+                symbol: pathSymbols.game,
+                symbolSize: [42, 38]
+              },
+              {
+                value: 34,
+                symbol: pathSymbols.money,
+                symbolSize: [40, 40]
+              },
+              {
+                value: 33,
+                symbol: pathSymbols.else,
+                symbolSize: [40, 40]
+              },
+              {
+                value: 18,
+                symbol: pathSymbols.taobao,
+                symbolSize: [40, 40]
+                },
 
+              ]
+            }
           ]
-        }
-      ]
-    };
+        };
 
-        if (option && typeof option === 'object') {
-          myChart.setOption(option);
-        }
+          if (option && typeof option === 'object') {
+            myChart.setOption(option);
+          }
 
         window.addEventListener('resize', myChart.resize);
       </script>
+</div>
+
+<!-- 三代人遗嘱对比 -->
+<div style="width:100%;height:400px">
+  <div id="pie" style="height:600px;width:1000px">
+    <!-- !!!! 饼图绘制 !!!! -->
+      <script type="text/javascript">
+      var myChart = echarts.init(document.getElementById('pie'),'purple-passion');
+
+      var labelTop = {
+            normal : {
+              label : {
+                  show : true,
+                  position : 'center',
+                  formatter : '{b}',
+                  textStyle: {
+                    baseline : 'bottom'
+                  }
+              },
+              labelLine : {
+                  show : false
+                },
+              }
+          };
+
+        var labelFromatter = {
+          normal : {
+            label : {
+                formatter : function (params){
+                    return 100 - params.value + '%'
+                },
+            textStyle: {
+                    baseline : 'top'
+                }
+            },
+            labelLine : {
+                show : true,
+                length:1,
+                length2:5
+            }
+          },
+        };
+        var labelBottom = {
+            normal : {
+              color: 'rgba(255,255,255)',
+              label : {
+                  show : true,
+                  position : 'center'
+              },
+              labelLine : {
+                  show : false,
+              }
+            },
+            // emphasis: {
+            //   color: 'rgba(0,0,0,0)'
+            // }
+            };
+        var radius = [20, 30];
+
+        myChart.setOption({
+        color:["#cc54d5",
+          "#1aaff2",
+          "#09F7F7",
+          "#f394f8",
+          "#e1664c",
+          "#f7d967"],
+        legend: {
+          x : 'center',
+          y : 'top',
+          color:'#fff',
+          data:[
+              'Google Maps','Facebook','YouTube','Google+','Weixin',
+              'Twitter', 'Skype', 'Messenger', 'WhatsApp', 'Instagram'
+          ]
+        },
+
+        series : [
+          {
+              type : 'pie',
+              center : ['20%', '15%'],
+              radius : radius,
+              x: '0%', // for funnel
+              itemStyle : labelFromatter,
+              data : [
+                  {name:'other', value:46, itemStyle : labelBottom},
+                  {name:'Google Maps', value:54,itemStyle : labelTop}
+              ]
+          },
+          {
+              type : 'pie',
+              center : ['20%', '15%'],
+              radius : radius,
+              x:'19%', // for funnel
+              itemStyle : labelFromatter,
+              data : [
+                  {name:'other', value:56, itemStyle : labelBottom},
+                  {name:'Facebook', value:44,itemStyle : labelTop}
+              ]
+          },
+          {
+              type : 'pie',
+              center : ['20%', '15%'],
+              radius : radius,
+              x:'38%', // for funnel
+              itemStyle : labelFromatter,
+              data : [
+                  {name:'other', value:65, itemStyle : labelBottom},
+                  {name:'YouTube', value:35,itemStyle : labelTop}
+              ]
+          },
+          {
+              type : 'pie',
+              center :['20%', '15%'],
+              radius : radius,
+              x:'54%', // for funnel
+              itemStyle : labelFromatter,
+              data : [
+                  {name:'other', value:70, itemStyle : labelBottom},
+                  {name:'Google+', value:30,itemStyle : labelTop}
+              ]
+          },
+          {
+              type : 'pie',
+              center : ['20%', '15%'],
+              radius : radius,
+              x:'70%', // for funnel
+              itemStyle : labelFromatter,
+              data : [
+                  {name:'other', value:73, itemStyle : labelBottom},
+                  {name:'Weixin', value:27,itemStyle : labelTop}
+              ]
+          },
+          {
+              type : 'pie',
+              center : ['20%', '15%'],
+              radius : radius,
+              // y: '55%',   // for funnel
+              x: '84%',    // for funnel
+              itemStyle : labelFromatter,
+              data : [
+                  {name:'other', value:78, itemStyle : labelBottom},
+                  {name:'Twitter', value:22,itemStyle : labelTop}
+              ]
+          }
+        ]
+        });
+      </script>
+  </div>
 </div>
 
     </body>
