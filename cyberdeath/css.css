@@ -3,8 +3,12 @@
 }
 
 @font-face{
-        font-family:'myFont';
-        src:url('myfont/YiFeiTi.ttf'),url('myfont/YiFeiTi.eot');
+      font-family:'myFont';
+      src:url('myfont/YiFeiTi.ttf'),url('myfont/YiFeiTi.eot');
+}
+@font-face{
+      font-family:'myFont2';
+      src:url('myfont/ChangGui.ttf'),url('myfont/YiFeiTi.eot');
         }
 
 
@@ -19,7 +23,7 @@ body {
   background-repeat: no-repeat, no-repeat;
   /* //没有覆盖到的区域不会被图片重叠来填充 */
   background-position: top center, center center;
-  background-size: 100% 50%;
+  background-size: 100% 46%;
 }
 
 h2 {
@@ -38,10 +42,10 @@ h2 {
 h3 {
   width: 100%;
   margin-top: 20px;
-  font-size: 22px;
-  font-family: 'myFont';
-  letter-spacing: -0.1em;
-  font-weight:lighter;
+  font-size: 18px;
+  font-family: 'myFont2';
+  letter-spacing: 0.1em;
+  font-weight:bold;
   color: #f7d967
 }
 
