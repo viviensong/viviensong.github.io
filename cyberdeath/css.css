@@ -2,46 +2,80 @@
   --offset: 6px;
 }
 
+@font-face{
+        font-family:'myFont';
+        src:url('myfont/YiFeiTi.ttf'),url('myfont/YiFeiTi.eot');
+        }
+
+
 body {
   background-color: #050505;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
+  text-align: center;
   min-height: 100vh;
+  background-image: url('img/bg/top2.png');
+  background-repeat: no-repeat, no-repeat;
+  /* //没有覆盖到的区域不会被图片重叠来填充 */
+  background-position: top center, center center;
+  background-size: 100% 50%;
 }
 
 h2 {
-  /* width: 60%; */
-  margin-top: -120px;
-  font-size: 80px;
-  font-family: Helvetica;
-  line-height: 1.06;
-  letter-spacing: -0.02em;
-  color: #e5e5e5;
+  width: 100%;
+  margin-top: 150px;
+  font-size: 100px;
+  font-family: 'myFont';
+  letter-spacing: 0.5em;
+  font-weight:lighter;
+  background-image:-webkit-linear-gradient(bottom,#1aaff2,#f394f8,#cc54d0);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
   text-align:center;
+}
+
+h3 {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 22px;
+  font-family: 'myFont';
+  letter-spacing: -0.1em;
+  font-weight:lighter;
+  color: #f7d967
+}
+
+.neon {
+  text-shadow: 0 0 10vw #F4BD0A;
+  /* animation: neon 2s ease-in-out infinite; */
+}
+
+div{
+  margin: 0 auto;
 }
 
 .mask {
   width: 100%;
   height: 80px;
-  position: relative;
-  overflow: hidden;
-  text-align:center;
+  text-align: center;
+  font-size: 80px;
+  font-family: 'myFont';
+  line-height: 1.06;
+  letter-spacing: 0.5em;
   margin-top: var(--offset);
+  filter: blur(2px);
 }
 
 .mask span {
-  display: block;
-  box-sizing: border-box;
+  display:inline-block;
+  margin: 0 auto;
   position: absolute;
-  top: 100px;
+  top: -250px;
   padding-bottom: var(--offset);
-
-  background-size: 100% 100%;
   -webkit-background-clip: text;
   background-clip: text;
+  z-index: -1;
   -webkit-text-fill-color: transparent;
-  background-repeat: no-repeat;
 }
 
 .mask span[data-show] {
@@ -54,13 +88,13 @@ h2 {
 }
 
 .mask span:nth-child(1) {
-  background-image: linear-gradient(30deg, #0ecffe 10%, #07a6f1);
+  background-image: linear-gradient(#1aaff2,transparent)
 }
 
 .mask span:nth-child(2) {
-  background-image: linear-gradient(30deg, #18e198 50%, #0ec15d);
+  background-image: linear-gradient(#cc54d0,transparent);
 }
 
 .mask span:nth-child(3) {
-  background-image: linear-gradient(30deg, #8a7cfb 50%, #633e9c);
+  background-image: linear-gradient(#f394f8,transparent);
 }
