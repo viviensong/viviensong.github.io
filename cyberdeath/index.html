@@ -248,12 +248,18 @@
 
 <!-- 三代人遗嘱对比 -->
 <div style="width:100%;height:400px">
-  <div id="pie" style="height:600px;width:1000px">
+  <h3 style="margin-top:20px;margin-bottom:60px">80/90/00后遗嘱中虚拟财产占比</h3>
+<!-- 80后 -->
+  <div style="width:22%;height:430px;float:left">
+    <h3 style="">80后遗嘱财产类型占比情况</h3>
+  </div>
+  <div id="pie" style="height:430px;width:78%;float:right;">
+
     <!-- !!!! 饼图绘制 !!!! -->
       <script type="text/javascript">
-      var myChart = echarts.init(document.getElementById('pie'),'purple-passion');
+        var myChart = echarts.init(document.getElementById('pie'),'purple-passion');
 
-      var labelTop = {
+        var labelTop = {
             normal : {
               label : {
                   show : true,
@@ -273,14 +279,14 @@
           normal : {
             label : {
                 formatter : function (params){
-                    return 100 - params.value + '%'
+                    return params.value + '%'
                 },
             textStyle: {
                     baseline : 'top'
                 }
             },
             labelLine : {
-                show : true,
+                show :true,
                 length:1,
                 length2:5
             }
@@ -288,7 +294,7 @@
         };
         var labelBottom = {
             normal : {
-              color: 'rgba(255,255,255)',
+              color: 'rgba(255,255,255,0.8)',
               label : {
                   show : true,
                   position : 'center'
@@ -297,9 +303,7 @@
                   show : false,
               }
             },
-            // emphasis: {
-            //   color: 'rgba(0,0,0,0)'
-            // }
+
             };
         var radius = [20, 30];
 
@@ -309,16 +313,15 @@
           "#09F7F7",
           "#f394f8",
           "#e1664c",
-          "#f7d967"],
+          "#f7d967",
+          ],
         legend: {
           x : 'center',
           y : 'top',
           color:'#fff',
+          textStyle:{color:'#09F7F7'},
           data:[
-              'Google Maps','Facebook','YouTube','Google+','Weixin',
-              'Twitter', 'Skype', 'Messenger', 'WhatsApp', 'Instagram'
-          ]
-        },
+              '房产','银⾏存款','虚拟财产','证券基⾦','公司股权','保险单']},
 
         series : [
           {
@@ -328,8 +331,8 @@
               x: '0%', // for funnel
               itemStyle : labelFromatter,
               data : [
-                  {name:'other', value:46, itemStyle : labelBottom},
-                  {name:'Google Maps', value:54,itemStyle : labelTop}
+                  {name:'other', value:2, itemStyle : labelBottom},
+                  {name:'房产', value:98,itemStyle : labelTop}
               ]
           },
           {
@@ -339,19 +342,19 @@
               x:'19%', // for funnel
               itemStyle : labelFromatter,
               data : [
-                  {name:'other', value:56, itemStyle : labelBottom},
-                  {name:'Facebook', value:44,itemStyle : labelTop}
+                  {name:'other', value:48, itemStyle : labelBottom},
+                  {name:'银⾏存款', value:52,itemStyle : labelTop}
               ]
           },
           {
               type : 'pie',
               center : ['20%', '15%'],
-              radius : radius,
+              radius : [20, 38],
               x:'38%', // for funnel
               itemStyle : labelFromatter,
               data : [
-                  {name:'other', value:65, itemStyle : labelBottom},
-                  {name:'YouTube', value:35,itemStyle : labelTop}
+                  {name:'other', value:88, itemStyle : labelBottom},
+                  {name:'虚拟财产', value:12,itemStyle : labelTop}
               ]
           },
           {
@@ -361,8 +364,8 @@
               x:'54%', // for funnel
               itemStyle : labelFromatter,
               data : [
-                  {name:'other', value:70, itemStyle : labelBottom},
-                  {name:'Google+', value:30,itemStyle : labelTop}
+                  {name:'other', value:86, itemStyle : labelBottom},
+                  {name:'证券基⾦', value:14,itemStyle : labelTop}
               ]
           },
           {
@@ -372,26 +375,299 @@
               x:'70%', // for funnel
               itemStyle : labelFromatter,
               data : [
-                  {name:'other', value:73, itemStyle : labelBottom},
-                  {name:'Weixin', value:27,itemStyle : labelTop}
+                  {name:'other', value:87, itemStyle : labelBottom},
+                  {name:'公司股权', value:13,itemStyle : labelTop}
               ]
           },
           {
               type : 'pie',
               center : ['20%', '15%'],
               radius : radius,
-              // y: '55%',   // for funnel
-              x: '84%',    // for funnel
+              x:'84%', // for funnel
+              itemStyle : labelFromatter,
+              data : [
+                  {name:'other', value:94, itemStyle : labelBottom},
+                  {name:'保险单', value:6,itemStyle : labelTop}
+              ]
+          }
+        ],
+        label: {
+          color: "#fff"
+        }
+            });
+      </script>
+  </div>
+  <!-- 90后 -->
+  <div style="width:22%;height:420px;float:left;margin-top:-280px">
+    <h3 style="">90后遗嘱财产类型占比情况</h3>
+  </div>
+  <div id="pie2" style="height:420px;width:78%;float:right;margin-top:-280px">
+
+    <!-- !!!! 饼图绘制 !!!! -->
+      <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('pie2'),'purple-passion');
+        var labelTop = {
+            normal : {
+              label : {
+                  show : true,
+                  position : 'center',
+                  formatter : '{b}',
+                  textStyle: {
+                    baseline : 'bottom'
+                  }
+              },
+              labelLine : {
+                  show : false
+                },
+              }
+          };
+
+        var labelFromatter = {
+          normal : {
+            label : {
+                formatter : function (params){
+                    return params.value + '%'
+                },
+            textStyle: {
+                    baseline : 'top'
+                }
+            },
+            labelLine : {
+                show :true,
+                length:1,
+                length2:5
+            }
+          },
+        };
+        var labelBottom = {
+            normal : {
+              color: 'rgba(255,255,255,0.8)',
+              label : {
+                  show : true,
+                  position : 'center'
+              },
+              labelLine : {
+                  show : false,
+              }
+            },
+
+            };
+        var radius = [20, 30];
+
+        myChart.setOption({
+        color:["#cc54d5",
+          "#1aaff2",
+          "#09F7F7",
+          "#f394f8",
+          "#e1664c",
+          "#f7d967",
+          ],
+        legend: {
+          x : 'center',
+          y : 'top',
+          color:'#fff',
+          textStyle:{color:'#09F7F7'},
+          data:[
+              '房产','银⾏存款','虚拟财产','证券基⾦','公司股权','保险单']},
+
+        series : [
+          {
+              type : 'pie',
+              center : ['20%', '15%'],
+              radius : radius,
+              x: '0%', // for funnel
+              itemStyle : labelFromatter,
+              data : [
+                  {name:'other', value:28, itemStyle : labelBottom},
+                  {name:'房产', value:72,itemStyle : labelTop}
+              ]
+          },
+          {
+              type : 'pie',
+              center : ['20%', '15%'],
+              radius : radius,
+              x:'19%', // for funnel
+              itemStyle : labelFromatter,
+              data : [
+                  {name:'other', value:18, itemStyle : labelBottom},
+                  {name:'银⾏存款', value:82,itemStyle : labelTop}
+              ]
+          },
+          {
+              type : 'pie',
+              center : ['20%', '15%'],
+              radius : [20, 38],
+              x:'38%', // for funnel
               itemStyle : labelFromatter,
               data : [
                   {name:'other', value:78, itemStyle : labelBottom},
-                  {name:'Twitter', value:22,itemStyle : labelTop}
+                  {name:'虚拟财产', value:22,itemStyle : labelTop}
+              ]
+          },
+          {
+              type : 'pie',
+              center :['20%', '15%'],
+              radius : radius,
+              x:'54%', // for funnel
+              itemStyle : labelFromatter,
+              data : [
+                  {name:'other', value:93, itemStyle : labelBottom},
+                  {name:'证券基⾦', value:7,itemStyle : labelTop}
+              ]
+          },
+          {
+              type : 'pie',
+              center : ['20%', '15%'],
+              radius : radius,
+              x:'70%', // for funnel
+              itemStyle : labelFromatter,
+              data : [
+                  {name:'other', value:99, itemStyle : labelBottom},
+                  {name:'公司股权', value:1,itemStyle : labelTop}
+              ]
+          },
+          {
+              type : 'pie',
+              center : ['20%', '15%'],
+              radius : radius,
+              x:'84%', // for funnel
+              itemStyle : labelFromatter,
+              data : [
+                  {name:'other', value:97, itemStyle : labelBottom},
+                  {name:'保险单', value:3,itemStyle : labelTop}
               ]
           }
-        ]
-        });
+        ],
+        label: {
+          color: "#fff"
+        }
+            });
       </script>
   </div>
+<!-- 00后 -->
+        <div style="width:22%;height:420px;float:left;margin-top:-280px">
+          <h3 style="">00后遗嘱财产类型占比情况</h3>
+        </div>
+        <div id="pie3" style="height:420px;width:78%;float:right;margin-top:-280px">
+
+          <!-- !!!! 饼图绘制 !!!! -->
+            <script type="text/javascript">
+              var myChart = echarts.init(document.getElementById('pie3'),'purple-passion');
+              var labelTop = {
+                  normal : {
+                    label : {
+                        show : true,
+                        position : 'center',
+                        formatter : '{b}',
+                        textStyle: {
+                          baseline : 'bottom'
+                        }
+                    },
+                    labelLine : {
+                        show : false
+                      },
+                    }
+                };
+
+              var labelFromatter = {
+                normal : {
+                  label : {
+                      formatter : function (params){
+                          return params.value + '%'
+                      },
+                  textStyle: {
+                          baseline : 'top'
+                      }
+                  },
+                  labelLine : {
+                      show :true,
+                      length:1,
+                      length2:5
+                  }
+                },
+              };
+              var labelBottom = {
+                  normal : {
+                    color: 'rgba(255,255,255,0.8)',
+                    label : {
+                        show : true,
+                        position : 'center'
+                    },
+                    labelLine : {
+                        show : false,
+                    }
+                  },
+
+                  };
+              var radius = [20, 30];
+
+              myChart.setOption({
+              color:["#cc54d5",
+                "#1aaff2",
+                "#09F7F7",
+                "#f394f8",
+                ],
+              legend: {
+                x : 'center',
+                y : 'top',
+                color:'#fff',
+                textStyle:{color:'#09F7F7'},
+                data:[
+                    '房产','银⾏存款','虚拟财产','其他']},
+
+              series : [
+                {
+                    type : 'pie',
+                    center : ['20%', '15%'],
+                    radius : radius,
+                    x: '0%', // for funnel
+                    itemStyle : labelFromatter,
+                    data : [
+                        {name:'other', value:98, itemStyle : labelBottom},
+                        {name:'房产', value:2,itemStyle : labelTop}
+                    ]
+                },
+                {
+                    type : 'pie',
+                    center : ['20%', '15%'],
+                    radius : radius,
+                    x:'19%', // for funnel
+                    itemStyle : labelFromatter,
+                    data : [
+                        {name:'other', value:2, itemStyle : labelBottom},
+                        {name:'银⾏存款', value:98,itemStyle : labelTop}
+                    ]
+                },
+                {
+                    type : 'pie',
+                    center : ['20%', '15%'],
+                    radius : [20, 38],
+                    x:'38%', // for funnel
+                    itemStyle : labelFromatter,
+                    data : [
+                        {name:'other', value:83, itemStyle : labelBottom},
+                        {name:'虚拟财产', value:17,itemStyle : labelTop}
+                    ]
+                },
+                {
+                    type : 'pie',
+                    center :['20%', '15%'],
+                    radius : radius,
+                    x:'54%', // for funnel
+                    itemStyle : labelFromatter,
+                    data : [
+                        {name:'other', value:98, itemStyle : labelBottom},
+                        {name:'其他', value:2,itemStyle : labelTop}
+                    ]
+                },
+                
+              ],
+              label: {
+                color: "#fff"
+              }
+                  });
+            </script>
+        </div>
 </div>
 
     </body>

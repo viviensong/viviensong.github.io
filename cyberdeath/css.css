@@ -23,7 +23,7 @@ body {
   background-repeat: no-repeat, no-repeat;
   /* //没有覆盖到的区域不会被图片重叠来填充 */
   background-position: top center, center center;
-  background-size: 100% 46%;
+  background-size: 100% 40%;
 }
 
 h2 {

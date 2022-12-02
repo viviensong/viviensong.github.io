@@ -62,7 +62,7 @@
         $.get('json/map/china.json', function(ret) {
             // echarts全局注册中国地图
             echarts.registerMap('china', ret)
-            let option = {
+             option = {
                 geo: {
                     // 类型为地图
                     type: 'map',
@@ -99,13 +99,13 @@
                         rippleEffect: {
                             // 特效的缩放比例
                             scale: 5
-                        }
+
                     }
                 ],
                 //
                 visualMap: {
                     // 指定最小值
-                    min: 0,
+                    min: 0
                     // 指定最大值
                     max: 200,
                     // 指定空气质量变化的颜色
@@ -118,7 +118,7 @@
             }
             // 指定配置及数据到echarts中
             mEcharts.setOption(option)
-        })
+
 
 </script>
 
