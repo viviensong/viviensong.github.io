@@ -1,128 +1,107 @@
-<html>
-    <head>
-        <title>赛博回忆</title>
-        <!-- 引用外部css -->
-        <script src="jquery.min.js" type="text/javascript"></script>
-        <!-- <script src="map.js" type="text/javascript"></script> -->
-        <script src="echarts.min.js" type="text/javascript"></script>
+<!-- <html>
+   <head>
+ <meta charset="utf-8">
+ <title>
+ <meta charset="utf-8">
+ <title>Sankey Diagram example</title>
+</head> -->
+<body>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
+<div id="sankey_multiple" style="width: 800px; height: 500px;"></div>
 
-    </head>
-    <body>
-
-<!-- map -->
-      <div style="width:500px;height:300px;">
-<!-- <p style="color:white">hhhhh</p> -->
 <script type="text/javascript">
-  // 基于div初始化echarts实例
-        let mEcharts = echarts.init(document.querySelector('div'))
-        // 每个城市的空气质量
-        let DataPM = [
-            {name: '台湾', value: 39.4},
-            {name: '河北', value: 56},
-            {name: '山西', value: 79},
-            {name: '内蒙古', value: 60},
-            {name: '安徽', value: 78},
-            {name: '澳门', value: 99.4},
-            {name: '北京', value: 25.6},
-            {name: '重庆', value: 54.3},
-            {name: '福建', value: 5.7},
-            {name: '甘肃', value: 6.9},
-            {name: '广东', value: 158.4},
-            {name: '广西', value: 167.9},
-            {name: '贵州', value: 94.7},
-            {name: '海南', value: 6.1},
-            {name: '黑龙江', value: 108.3},
-            {name: '河南', value: 72.5},
-            {name: '湖北', value: 194},
-            {name: '湖南', value: 85.6},
-            {name: '江苏', value: 94.1},
-            {name: '江西', value: 24.5},
-            {name: '吉林', value: 98},
-            {name: '辽宁', value: 175},
-            {name: '宁夏', value: 15.4},
-            {name: '青海', value: 78.6},
-            {name: '山东', value: 38.9},
-            {name: '上海', value: 54.6},
-            {name: '四川', value: 24},
-            {name: '天津', value: 68},
-            {name: '香港', value: 174},
-            {name: '新疆', value: 10.1},
-            {name: '西藏', value: 2.6},
-            {name: '云南', value: 6.1},
-            {name: '浙江', value: 54.3},
-            {name: '陕西', value: 76.2},
-        ]
-        // 涟漪特效的坐标
-        let scatterData = [
-            {value: [123.429096, 41.796767]},
-            {value: [114.298572, 30.584355]}
-        ]
-        // 使用axios获取中国地图的json数据，获取成功之后，调用回调函数
-        $.get('json/map/china.json', function(ret) {
-            // echarts全局注册中国地图
-            echarts.registerMap('china', ret)
-             option = {
-                geo: {
-                    // 类型为地图
-                    type: 'map',
-                    // 地图的数据，必须和echarts全局中注册的china名称一致
-                    map: 'china',
-                    // 显示地图各个省份的名称
-                    label: {
-                        show: true
-                    },
-                    // 地图的缩放比例
-                    zoom:1,
-                    // 设置允许拖动缩放
-                    roam: true,
-                    // 以经纬度作为地图的中心点
-                    // center: [121.509062, 25.044332]
-                },
-                series: [
-                    {
-                        // 每个省的空气质量数据
-                        data: DataPM,
-                        // 将空气质量的数据和geo进行关联
-                        geoIndex: 0,
-                        // 关联的类型
-                        type: 'map'
-                    },
-                    {
-                        // 图形类型为涟漪图
-                        type: 'effectScatter',
-                        // 涟漪的坐标数据
-                        data: scatterData,
-                        // 以geo为坐标进行显示
-                        coordinateSystem: 'geo',
-                        // 涟漪特效的配置
-                        rippleEffect: {
-                            // 特效的缩放比例
-                            scale: 5
-
-                    }
-                ],
-                //
-                visualMap: {
-                    // 指定最小值
-                    min: 0
-                    // 指定最大值
-                    max: 200,
-                    // 指定空气质量变化的颜色
-                    inRange: {
-                        color: ['white', 'red']
-                    },
-                    // 出现滑块，过滤空气质量的城市
-                    calculable: true
-                }
-            }
-            // 指定配置及数据到echarts中
-            mEcharts.setOption(option)
+  google.charts.load("current", {packages:["sankey"]});
+  google.charts.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Number of People');
+    data.addRows([
+  //     [ 'Born in UK', 'Born in rest of UK', 514235 ],
+  [ '2014', '疾病', 1],
+[ '2014', '意外', 1],
+[ '2014', '自杀', 1],
+[ '2015', '车祸', 1],
+[ '2015', '疾病', 4],
+[ '2015', '自杀', 1],
+[ '2016', '不详', 2],
+[ '2016', '猝死', 1],
+[ '2016', '疾病', 4],
+[ '2017', '疾病', 8],
+[ '2017', '意外', 1],
+[ '2017', '自杀', 2],
+[ '2018', '不详', 3],
+[ '2018', '车祸', 2],
+[ '2018', '疾病', 9],
+[ '2018', '意外', 2],
+[ '2018', '自杀', 13],
+[ '2019', '不详', 4],
+[ '2019', '车祸', 1],
+[ '2019', '猝死', 3],
+[ '2019', '疾病', 18],
+[ '2019', '意外', 2],
+[ '2019', '自杀', 13],
+[ '2020', '不详', 4],
+[ '2020', '车祸', 3],
+[ '2020', '猝死', 2],
+[ '2020', '疾病', 31],
+[ '2020', '意外', 3],
+[ '2020', '自杀', 22],
+[ '2021', '不详', 6],
+[ '2021', '车祸', 4],
+[ '2021', '猝死', 5],
+[ '2021', '疾病', 43],
+[ '2021', '意外', 9],
+[ '2021', '自杀', 42],
 
 
+
+
+       [ 'UK under 10 years', 'Large urban areas', 153101 ],
+       [ 'UK under 10 years', 'Other urban areas', 45157 ],
+       [ 'UK under 10 years', 'Accessible small towns', 8610 ],
+       [ 'UK under 10 years', 'Remote small towns', 5425 ],
+       [ 'UK under 10 years', 'Accessibe rural', 11633 ],
+       [ 'UK under 10 years', 'Remote rural', 7263 ],
+       [ 'UK 10 years or over', 'Large urban areas', 67972 ],
+       [ 'UK 10 years or over', 'Other urban areas', 33347 ],
+       [ 'UK 10 years or over', 'Accessible small towns', 9566 ],
+       [ 'UK 10 years or over', 'Remote small towns', 4013 ],
+       [ 'UK 10 years or over', 'Accessibe rural', 14791 ],
+       [ 'UK 10 years or over', 'Remote rural', 8406 ]
+
+
+    ]);
+
+    // Set chart options
+    var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
+                  '#cab2d6', '#ffff99', '#1f78b4', '#33a02c'];
+    var options = {
+      height: 600,
+      width: 1500,
+       sankey: {
+        node: {
+          colors: colors,
+          nodePadding: 80,
+          label: { fontName: 'Calibri',
+                         fontSize: 18,
+                         color: 'black',
+                         bold: true//,
+                       //  underline: true,
+                          }
+        },
+          link: {
+          colorMode: 'source',
+          colors: colors },
+      }
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
 </script>
-
-      </div>
-    <!-- /  <p style="color:white">hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</p> -->
-    </body>
+</body>
 </html>

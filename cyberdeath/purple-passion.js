@@ -21,15 +21,21 @@
     }
     echarts.registerTheme('purple-passion', {
         "color": [
-            "#cc54d0",
-            "#1aaff2",
-            "#09F7F7",
-            "#f394f8",
-            "#e1664c",
-            "#f7d967"
-        ],
+          "#cc54d0",
+      "#1aaff2",
+      "#8fd3e8",
+      "#f394f8",
+      "#e1664c",
+      "#f7d967",
+      "#ad78f0",
+      "#c7f2ff",
+      "#6e9cff",
+      "#ffffff",
+            ],
         "backgroundColor": rgba(128, 128, 128, 0.1),
-        "textStyle": {},
+        "textStyle": {"color": "#ffffff",
+        },
+
         "title": {
             "textStyle": {
                 "color": "#ffffff"
@@ -92,8 +98,8 @@
         },
         "sankey": {
             "itemStyle": {
-                "borderWidth": "-1",
-                "borderColor": "#ffffff"
+                "borderWidth": "0",
+                "borderColor": "#B9B8CE"
             }
         },
         "funnel": {

@@ -23,12 +23,12 @@ body {
   background-repeat: no-repeat, no-repeat;
   /* //没有覆盖到的区域不会被图片重叠来填充 */
   background-position: top center, center center;
-  background-size: 100% 40%;
+  background-size: 100% 20%;
 }
 
 h2 {
   width: 100%;
-  margin-top: 150px;
+  margin-top: 120px;
   font-size: 100px;
   font-family: 'myFont';
   letter-spacing: 0.5em;
@@ -44,12 +44,48 @@ h3 {
   text-align: center;
   /* margin-right: 200px; */
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 32px;
   font-family: 'myFont2';
   letter-spacing: 0.1em;
   font-weight:bold;
-  color: #f7d967
+  color: #f7d967;
+  font-weight: bold;
 }
+
+.text{
+  color: #fff;
+  font-family: Microsoft JhengHei;
+  text-align: center;
+}
+
+.text-long{
+  color: #fff;
+  font-family: Microsoft JhengHei;
+  text-align:justify
+}
+
+.myButton {
+	background-color:#1aaff2;
+	border-radius:8px;
+  border-color: #fff;
+	display:inline-block;
+	cursor:pointer;
+	color:#fff;
+	font-family:Arial;
+	font-size:13px;
+	padding:6px 12px;
+  letter-spacing: 0.3em;
+
+	text-decoration:none;
+}
+.myButton:hover {
+	background-color:#09F7F7;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
 
 .neon {
   text-shadow: 0 0 10vw #F4BD0A;

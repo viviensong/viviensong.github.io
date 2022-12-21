@@ -4,11 +4,15 @@
         <title>赛博回忆</title>
         <!-- 引用外部css -->
         <link rel="stylesheet" href="./css.css">
+        <link rel="stylesheet" href="style2.css">
+        <link rel="stylesheet" type="text/css" href="dist/css/main.min.css">
+          <link rel="stylesheet" type="text/css" href="dist/css/theme.min.css">
         <!-- 引用外部javascript -->
-        <script src="echarts.min.js" type="text/javascript"></script>
-        <script src="js.js" type="text/javascript"></script>
         <script src="jquery.min.js" type="text/javascript"></script>
+        <script src="tagcanvas.js" type="text/javascript"></script>
+        <script src="js.js" type="text/javascript"></script>
         <script src="purple-passion.js" type="text/javascript"></script>
+        <script src="echarts.min.js" type="text/javascript"></script>
 
     </head>
     <body>
@@ -23,7 +27,8 @@
       </div>
 <!-- map -->
 <div class="box" style="width:100%;margin:0 auto">
-    <h3>截至2021年12月31日，中华遗嘱库共计收到 445 份遗嘱，内容涉及“虚拟财产”</h3>
+    <h3>离开时，你想留下什么？</h3>
+    <p class="text">截至2021年12月31日，中华遗嘱库共计收到 445 份遗嘱，内容涉及“虚拟财产”</p>
     <div id="map" style="margin:0 auto;width:1000px;height:480px;  background-image: url('img/bg/wang.png')">
       <script type="text/javascript">
         let mEcharts = echarts.init(document.getElementById('map'),'purple-passion')
@@ -119,8 +124,8 @@
 
 <!-- 虚拟财产类型 -->
 <div class="box" style="width:100%;height:360px;margin:0 auto">
-    <div style="float: right;width:50%">
-      <h3>遗嘱中的虚拟财产类型</h3>
+    <div style="float: right;width:50%;">
+      <p class="text-long" style="padding:60px">截至2021年12月31日，中华遗嘱库共计收到 445 份遗嘱，内容涉及“虚拟财产”</p>
     </div>
     <div id="container" style="width:50%;height:360px;margin:0"></div>
     <script type="text/javascript">
@@ -247,13 +252,13 @@
 </div>
 
 <!-- 三代人遗嘱对比 -->
-<div style="width:100%;height:400px">
-  <h3 style="margin-top:20px;margin-bottom:60px">80/90/00后遗嘱中虚拟财产占比</h3>
-<!-- 80后 -->
-  <div style="width:22%;height:430px;float:left">
+<div style="width:100%;height:400px;margin-bottom:100px">
+  <p class="text">00后遗产占比</p><br><br>
+  <!-- 80后 -->
+  <div style="width:28%;height:140px;float:left">
     <h3 style="">80后遗嘱财产类型占比情况</h3>
   </div>
-  <div id="pie" style="height:430px;width:78%;float:right;">
+  <div id="pie" style="height:140px;width:72%;float:right;">
 
     <!-- !!!! 饼图绘制 !!!! -->
       <script type="text/javascript">
@@ -321,12 +326,12 @@
           color:'#fff',
           textStyle:{color:'#09F7F7'},
           data:[
-              '房产','银⾏存款','虚拟财产','证券基⾦','公司股权','保险单']},
+              '房产','银⾏存款','虚拟财产','证券基⾦','其他']},
 
         series : [
           {
               type : 'pie',
-              center : ['20%', '15%'],
+              center : ['20%', '50%'],
               radius : radius,
               x: '0%', // for funnel
               itemStyle : labelFromatter,
@@ -337,7 +342,7 @@
           },
           {
               type : 'pie',
-              center : ['20%', '15%'],
+              center : ['20%', '50%'],
               radius : radius,
               x:'19%', // for funnel
               itemStyle : labelFromatter,
@@ -348,7 +353,7 @@
           },
           {
               type : 'pie',
-              center : ['20%', '15%'],
+              center : ['20%', '50%'],
               radius : [20, 38],
               x:'38%', // for funnel
               itemStyle : labelFromatter,
@@ -359,7 +364,7 @@
           },
           {
               type : 'pie',
-              center :['20%', '15%'],
+              center :['20%', '50%'],
               radius : radius,
               x:'54%', // for funnel
               itemStyle : labelFromatter,
@@ -370,26 +375,16 @@
           },
           {
               type : 'pie',
-              center : ['20%', '15%'],
+              center : ['20%', '50%'],
               radius : radius,
               x:'70%', // for funnel
               itemStyle : labelFromatter,
               data : [
-                  {name:'other', value:87, itemStyle : labelBottom},
-                  {name:'公司股权', value:13,itemStyle : labelTop}
+                  {name:'other', value:81, itemStyle : labelBottom},
+                  {name:'其他', value:19,itemStyle : labelTop}
               ]
           },
-          {
-              type : 'pie',
-              center : ['20%', '15%'],
-              radius : radius,
-              x:'84%', // for funnel
-              itemStyle : labelFromatter,
-              data : [
-                  {name:'other', value:94, itemStyle : labelBottom},
-                  {name:'保险单', value:6,itemStyle : labelTop}
-              ]
-          }
+
         ],
         label: {
           color: "#fff"
@@ -398,10 +393,10 @@
       </script>
   </div>
   <!-- 90后 -->
-  <div style="width:22%;height:420px;float:left;margin-top:-280px">
+  <div style="width:28%;height:120px;float:left;">
     <h3 style="">90后遗嘱财产类型占比情况</h3>
   </div>
-  <div id="pie2" style="height:420px;width:78%;float:right;margin-top:-280px">
+  <div id="pie2" style="height:120px;width:72%;float:right;">
 
     <!-- !!!! 饼图绘制 !!!! -->
       <script type="text/javascript">
@@ -462,18 +457,11 @@
           "#e1664c",
           "#f7d967",
           ],
-        legend: {
-          x : 'center',
-          y : 'top',
-          color:'#fff',
-          textStyle:{color:'#09F7F7'},
-          data:[
-              '房产','银⾏存款','虚拟财产','证券基⾦','公司股权','保险单']},
 
         series : [
           {
               type : 'pie',
-              center : ['20%', '15%'],
+              center : ['20%', '50%'],
               radius : radius,
               x: '0%', // for funnel
               itemStyle : labelFromatter,
@@ -484,7 +472,7 @@
           },
           {
               type : 'pie',
-              center : ['20%', '15%'],
+              center : ['20%', '50%'],
               radius : radius,
               x:'19%', // for funnel
               itemStyle : labelFromatter,
@@ -495,7 +483,7 @@
           },
           {
               type : 'pie',
-              center : ['20%', '15%'],
+              center : ['20%', '50%'],
               radius : [20, 38],
               x:'38%', // for funnel
               itemStyle : labelFromatter,
@@ -506,7 +494,7 @@
           },
           {
               type : 'pie',
-              center :['20%', '15%'],
+              center :['20%', '50%'],
               radius : radius,
               x:'54%', // for funnel
               itemStyle : labelFromatter,
@@ -517,26 +505,16 @@
           },
           {
               type : 'pie',
-              center : ['20%', '15%'],
+              center : ['20%', '50%'],
               radius : radius,
               x:'70%', // for funnel
               itemStyle : labelFromatter,
               data : [
                   {name:'other', value:99, itemStyle : labelBottom},
-                  {name:'公司股权', value:1,itemStyle : labelTop}
-              ]
-          },
-          {
-              type : 'pie',
-              center : ['20%', '15%'],
-              radius : radius,
-              x:'84%', // for funnel
-              itemStyle : labelFromatter,
-              data : [
-                  {name:'other', value:97, itemStyle : labelBottom},
-                  {name:'保险单', value:3,itemStyle : labelTop}
+                  {name:'其他', value:4,itemStyle : labelTop}
               ]
           }
+
         ],
         label: {
           color: "#fff"
@@ -544,12 +522,11 @@
             });
       </script>
   </div>
-<!-- 00后 -->
-        <div style="width:22%;height:420px;float:left;margin-top:-280px">
-          <h3 style="">00后遗嘱财产类型占比情况</h3>
+  <!-- 00后 -->
+        <div style="width:28%;height:120px;float:left;margin">
+          <p class="text">00后遗产占比</p>
         </div>
-        <div id="pie3" style="height:420px;width:78%;float:right;margin-top:-280px">
-
+        <div id="pie3" style="height:120px;width:72%;float:right;">
           <!-- !!!! 饼图绘制 !!!! -->
             <script type="text/javascript">
               var myChart = echarts.init(document.getElementById('pie3'),'purple-passion');
@@ -606,19 +583,15 @@
                 "#1aaff2",
                 "#09F7F7",
                 "#f394f8",
+                "#e1664c",
+                "#f7d967",
                 ],
-              legend: {
-                x : 'center',
-                y : 'top',
-                color:'#fff',
-                textStyle:{color:'#09F7F7'},
-                data:[
-                    '房产','银⾏存款','虚拟财产','其他']},
+
 
               series : [
                 {
                     type : 'pie',
-                    center : ['20%', '15%'],
+                    center : ['20%', '50%'],
                     radius : radius,
                     x: '0%', // for funnel
                     itemStyle : labelFromatter,
@@ -629,7 +602,7 @@
                 },
                 {
                     type : 'pie',
-                    center : ['20%', '15%'],
+                    center :  ['20%', '50%'],
                     radius : radius,
                     x:'19%', // for funnel
                     itemStyle : labelFromatter,
@@ -640,7 +613,7 @@
                 },
                 {
                     type : 'pie',
-                    center : ['20%', '15%'],
+                    center : ['20%', '50%'],
                     radius : [20, 38],
                     x:'38%', // for funnel
                     itemStyle : labelFromatter,
@@ -651,16 +624,27 @@
                 },
                 {
                     type : 'pie',
-                    center :['20%', '15%'],
+                    center :['20%', '50%'],
                     radius : radius,
                     x:'54%', // for funnel
+                    itemStyle : labelFromatter,
+                    data : [
+                        {name:'other', value:99, itemStyle : labelBottom},
+                        {name:'证券基⾦', value:1,itemStyle : labelTop}
+                    ]
+                },
+                {
+                    type : 'pie',
+                    center : ['20%', '50%'],
+                    radius : radius,
+                    x:'70%', // for funnel
                     itemStyle : labelFromatter,
                     data : [
                         {name:'other', value:98, itemStyle : labelBottom},
                         {name:'其他', value:2,itemStyle : labelTop}
                     ]
                 },
-                
+
               ],
               label: {
                 color: "#fff"
@@ -670,5 +654,823 @@
         </div>
 </div>
 
+<!-- 云中谁寄锦书来 -->
+<div class="box" style="width:100%;height:660px;">
+  <h3 style="padding-top:60px">云中谁寄锦书来？</h3><br>
+  <div class="box" style="width:50%;float:left">
+    <img src="img/2.png" style="width:880px;position:relative;left:0;bottom: 90px">
+  </div>
+    <div class="box" style="width:50%;float:right">
+        <p class="text-long" style="width:90%;margin-top: 40px">
+          受新冠疫情影响，许多人出门受限，因此选择了通过在网上写下微信遗嘱，表达了自己的真实想法和意愿。
+          截至2021年12月31日，中华遗嘱库一共收到8万多份微信遗嘱：
+        </p>
+        <form id="form1">
+
+            <div class="tree" id="FamilyTreeDiv">
+
+                <ul>
+
+                    <li class="single">
+                        <div>
+                            <span class="female">传递对象</span>
+                        </div>
+
+
+                        <ul>
+                            <li class="couple">
+
+                                <div>
+                                    <span class="male">父母<br>21.5%</span>
+                                </div>
+
+                            </li>
+
+                            <li class="couple">
+
+                                <div>
+                                    <span class="male">爱人<br>38.1%</span>
+                                </div>
+                          </li>
+                          <li class="couple">
+
+                              <div>
+                                  <span class="male">子女<br>25.3%</span>
+                              </div>
+
+                          </li>
+
+                          <li class="couple">
+
+                              <div>
+                                  <span class="male">自己<br>4.1%</span>
+                              </div>
+                        </li>
+                        <li class="couple">
+
+                            <div>
+                                <span class="male">其他<br>0.6%</span>
+                            </div>
+                      </li>
+
+                </ul>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- 寄托的话 -->
+<div class="box"style="width:100%;height:400px;">
+    <span class="text">
+    从微信遗嘱的内容上看，大多数人会给爱人、家人留下心里话，而这些话，平时很难向对方亲口说出。</span>
+    <p class="text-long" style="width:50%;margin-top: 40px;margin-left:10%;background-color:#1aaff2">
+      “请不要给我穿寿衣，平时穿的普通衣物就好。不要给我画得花花绿绿的，淡妆就好。用‘杨树林’那个口红吧，那个是我最喜欢的。”
+    </p>
+    <p class="text-long" style="width:50%;margin-top: 40px;margin-left:40%;background-color:#1aaff2">
+  “作为母女可以像朋友一样相处，彼此有共同语言，我觉得自己真的很幸运。只要是方向正确的事你从来不会阻拦我，爱你哦。顺便说一句，我那些专辑、海报、各种周边都是限量的，千万别误扔。”
+    </p>
+    <p class="text-long" style="width:50%;margin-top: 40px;margin-left:10%;background-color:#1aaff2">
+  “不管遇到什么困难挫折，你们俩都要勇敢面对，妈妈爱你们。我所有银行卡都放在深棕色花纹钱包和驾驶证卡包里，密码大部分都是你们的阴历生日。”
+    </p>
+</div>
+
+<!-- 微信遗嘱内容 -->
+<div id="content" style="width:100%;height:460px">
+  <script type="text/javascript">
+  var chartDom = document.getElementById('content');
+    var myChart = echarts.init(chartDom, 'purple-passion');
+    var option;
+
+    option = {
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} ({d}%)'
+      },
+      color: [
+          "#cc54d0",
+          "#1aaff2",
+          "#09F7F7",
+          "#f394f8",
+          "#e1664c",
+          "#f7d967"
+      ],
+      legend: {
+        data: [
+          'Direct',
+          'Marketing',
+          'Search Engine',
+          'Email',
+          'Union Ads',
+          'Video Ads'
+        ]
+      },
+      series: [
+        {
+          name: '寄信人',
+          type: 'pie',
+          selectedMode: 'single',
+          radius: [0, '50%'],
+          label: {
+            position: 'inner',
+            fontSize: 14
+          },
+          labelLine: {
+            show: false
+          },
+          data: [
+            { value: 23472, name: '20岁以下' },
+            { value: 26943, name: '20-29' },
+            { value: 17476, name: '30-39', selected: true },
+            { value: 6784, name: '40-49' },
+            { value: 3249, name: '50-59' },
+            { value: 2981, name: '60岁以上' }
+          ]
+        },
+        {
+          name: '微信遗嘱内容',
+          type: 'pie',
+          radius: ['66%', '88%'],
+
+          label: {
+            formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+            backgroundColor: '#F6F8FC',
+            borderColor: '#8C8D8E',
+            borderWidth: 1,
+            borderRadius: 4,
+            rich: {
+              a: {
+                color: '#6E7079',
+                lineHeight: 22,
+                align: 'center'
+              },
+              hr: {
+                borderColor: '#8C8D8E',
+                width: '100%',
+                borderWidth: 1,
+                height: 0
+              },
+              b: {
+                color: '#4C5058',
+                fontSize: 14,
+                fontWeight: 'bold',
+                lineHeight: 33
+              },
+              per: {
+                color: '#fff',
+                // backgroundColor: '#4C5058',
+                padding: [3, 4],
+                borderRadius: 4
+              }
+            }
+          },
+          data: [
+            { value: 4175, name: '对自己或亲友的鼓励语' },
+            { value: 5210, name: '立遗嘱的原因和想法' },
+            { value: 28681, name: '向爱人、配偶表白' },
+            { value: 15226, name: '人生经历和未来期望' },
+            { value: 27613, name: '对爱人和家人作祝福、祈福' }
+          ]
+        }
+      ]
+      };
+
+    option && myChart.setOption(option);
+
+  </script>
+
+</div>
+
+<!-- 电子墓碑-豆瓣 -->
+<div class="box" style="width:100%;height:1480px;">
+  <h3 style="padding-top:60px">往者犹可追</h3><br>
+  <p class="text" style="width:66%;padding-left:18%;text-align:justify">
+    「往者不可谏，来者犹可追」人们常说：过去了的已经无法挽回了，但未来的还来得及。
+    在赛博时代，我们能够通过逝者数字痕迹的点点滴滴重新构建出ta的形象。
+    与亡灵交友成为了可能。</p>
+    <p class="text" style="width:66%;padding-left:18%;text-align:justify">
+      赛博时代，亡者的社交媒体成了数字灵魂寄存处。</p>
+  <p class="text" style="width:66%;padding-left:18%;text-align:justify">
+    都说人一生会经历三次死亡:  第一次死亡是肉体再也感知不到这个真实的世界，这是生物意义上的死亡;第二次死亡是亲朋送别火化肉体，你所获得的荣誉随之飘散，这是社会地位的逝去;
+    第三次的死亡是再也没人记得你存在过这个世界，这才是真正的死亡。</p>
+
+  <p class="text" style="width:66%;padding-left:18%;text-align:justify">
+    2012年10月8日，「豆瓣公墓」小组成立，目的是纪念已故的豆瓣用户。
+    里面的帖子统一遵循这样的格式：豆瓣名称-生卒年月，内文说明离世原因，以及逝者生前的豆瓣主页。
+    自2019年4月30日（目前最早可见贴发布日期）至2022年12月19日，「豆瓣公墓」小组已有12341名守墓人。
+    有48名讣告人发布了75篇讣告，其中讣告人「林离」发布了8篇。</p>
+  <div class="example-funnels" style="margin-top:50px">
+      <div class="funnel" id="examplefunnel0"></div>
+      <div class="funnel" id="examplefunnel1"></div>
+  </div>
+  <script src="dist/js/funnel-graph.js"></script>
+  <script>
+      var examples = [
+      {
+          labels: ['守墓人', '悼念者', '讣告人'],
+          colors: ['#cc54d0', '#09F7F7'],
+          values: [12341, 1628, 48]
+      }
+    ];
+      var graphs = [];
+      for(var i = 0; i < examples.length; i++) {
+
+          var graph = new FunnelGraph({
+              container: '#examplefunnel' + i,
+              gradientDirection: 'horizontal',
+              data: examples[i],
+              displayPercent: true,
+              direction: 'horizontal',
+              width: 800,
+              height: 300,
+              subLabelValue: 'percent'
+          });
+
+          graph.draw();
+          graphs.push(graph);
+      }
+      console.log("Graphs spawned: ", graphs);
+  </script>
+
+  <p class="text" style="width:66%;padding-left:18%;text-align:justify">
+  2021年1月，豆瓣App 7.0版本上线了“悼念逝者”的功能。
+  经过豆瓣官方确认的逝者账号主页会显示“用户已故”字样。在ta的主页，你能看到ta曾经发表的日记，和你们的共同爱好。
+  点击逝者主页的头像，就能送ta一朵山茶花。</p>
+  <div style="width:1260px;height:520px;margin:0 auto;background-image: url('img/0.png');background-size:98%">
+    <button class="myButton" onclick="showimg()" style="margin-top:320px;margin-left:-26px">点击悼念</button>
+    <p style="margin:0 auto;display:none" id="show">
+      <img src="img/hua.png" style="width:90px;margin:0 auto;opacity:0;animation: warn 0.6s ease-out 0.6s;animation-fill-mode: forwards;">
+    </p>
+  </div>
+  <script>
+     function showimg(){
+        document.getElementById('show').style.display="block";
+     }
+   </script>
+</div>
+
+<!-- b站电子墓碑数据统计 -->
+<div class="box" style="width:100%;height:200px;">
+  <p class="text" style="width:66%;padding-left:18%;text-align:justify">
+    2020年12月24日，bilibili发布一则灰色背景的公告，称将把不幸离开人世的B站用户的账号列为“纪念账号” 作为对逝者的纪念加以保护。
+    在B站公告的下方，网友们在评论区中罗列出已经离世的up主，已然成为了一场盛大的悼念。
+  在网友提到的up主中，有直播自杀却在网络暴力中离去的翻唱歌手，有因车祸不幸去世的游戏主播，有通过vlog分享留学经历却最终去世的中国留学生，
+  也有因为抑郁症跳楼身亡的画手。点进他们的个人主页，账号留存了这些普通人在世界中生活过的痕迹，勾勒出他们生前生动的灵魂。
+  </p>
+  <p class="text" style="width:66%;padding-left:18%;text-align:justify">
+    2022年，b站纪念账号收集君通过统计核实网友的评论与私信数据，整理出2014年-2021年间离世的up主名单。
+  </p>
+</div>
+
+<!-- 词云 -->
+<div id="wordCloudContainer" width="680" height="540">
+  <canvas width="1280" height="480" id="wordCloud" style="width: 100%">
+    <ul>
+      <li><a href="#">Neuuuuu</a></li>
+      <li><a href="#">钻石の坷垃</a></li>
+      <li><a href="#">木瓜之王</a></li>
+      <li><a href="#">冷酷的k</a></li>
+      <li><a href="#">新月零犬</a></li>
+      <li><a href="#">黄昏豆芽</a></li>
+      <li><a href="#">Matheory</a></li>
+      <li><a href="#">薄纱魔导研究所</a></li>
+      <li><a href="#">山葵さやか</a></li>
+      <li><a href="#">三十张</a></li>
+      <li><a href="#">Umika</a></li>
+      <li><a href="#">Subtimes</a></li>
+      <li><a href="#">酥鱼君</a></li>
+      <li><a href="#">卖萌买西瓜</a></li>
+      <li><a href="#">渣糖糖雨</a></li>
+      <li><a href="#">乱风残月</a></li>
+      <li><a href="#">李家的梓树</a></li>
+      <li><a href="#">吃喝不愁的live</a></li>
+      <li><a href="#">橙字owl</a></li>
+      <li><a href="#">高峰桑</a></li>
+      <li><a href="#">漫行豆豆</a></li>
+      <li><a href="#">Tank</a></li>
+      <li><a href="#">丶溜吧</a></li>
+      <li><a href="#">有一个酷炫的名字</a></li>
+      <li><a href="#">路过的qy给dalao递茶</a></li>
+      <li><a href="#">有一只小猫熊</a></li>
+      <li><a href="#">热爱荣耀君叶修</a></li>
+      <li><a href="#">磁力panzer</a></li>
+      <li><a href="#">范恩fun</a></li>
+      <li><a href="#">黑刀红雪</a></li>
+      <li><a href="#">ごうこく</a></li>
+      <li><a href="#">晚饭怎么吃</a></li>
+      <li><a href="#">Lucky果子</a></li>
+      <li><a href="#">Up退站勿念</a></li>
+      <li><a href="#">Instantst</a></li>
+      <li><a href="#">日向電工</a></li>
+      <li><a href="#">冰火泰坦</a></li>
+      <li><a href="#">画画的ray</a></li>
+      <li><a href="#">沉默之主宰</a></li>
+      <li><a href="#">易延殊</a></li>
+      <li><a href="#">张羽</a></li>
+      <li><a href="#">叶无力</a></li>
+      <li><a href="#">一一散华礼弥一一</a></li>
+      <li><a href="#">Sz47</a></li>
+      <li><a href="#">咖喱白</a></li>
+      <li><a href="#">Macs126</a></li>
+      <li><a href="#">带你看新疆</a></li>
+      <li><a href="#">Michaelwrench359</a></li>
+      <li><a href="#">轩影</a></li>
+      <li><a href="#">凉太君的宝藏女孩</a></li>
+      <li><a href="#">于济深</a></li>
+      <li><a href="#">Kj梦俊颜</a></li>
+      <li><a href="#">阿狗的一天一餐</a></li>
+      <li><a href="#">Heytwo二黑</a></li>
+      <li><a href="#">艾尔勒斯aerles</a></li>
+      <li><a href="#">久玖鹿</a></li>
+      <li><a href="#">想学建筑的史蒂夫</a></li>
+      <li><a href="#">原言葉</a></li>
+      <li><a href="#">John</a></li>
+      <li><a href="#">Towse</a></li>
+      <li><a href="#">小a较瘦</a></li>
+      <li><a href="#">日湘雏田</a></li>
+      <li><a href="#">稻草人小陌</a></li>
+      <li><a href="#">玲子是zero</a></li>
+      <li><a href="#">漠少丶</a></li>
+      <li><a href="#">燕归来a</a></li>
+      <li><a href="#">两只胳膊的杨过</a></li>
+      <li><a href="#">寒塘冷月ws</a></li>
+      <li><a href="#">贱贱的荡荡</a></li>
+      <li><a href="#">不是菜鸟是才鸟</a></li>
+      <li><a href="#">Uncle弗雷迪</a></li>
+      <li><a href="#">可小猫</a></li>
+      <li><a href="#">Tipnine19</a></li>
+      <li><a href="#">悠哉的平泽唯</a></li>
+      <li><a href="#">迈克尔乔巴</a></li>
+      <li><a href="#">已被清号</a></li>
+      <li><a href="#">腹黑scorpion</a></li>
+      <li><a href="#">吉良吉影不给你点赞</a></li>
+      <li><a href="#">某科学的四氯化碳</a></li>
+      <li><a href="#">幽幽寺四夜awa</a></li>
+      <li><a href="#">贪吃的木易播</a></li>
+      <li><a href="#">北巷林七</a></li>
+      <li><a href="#">七七同学</a></li>
+      <li><a href="#">明灯三千</a></li>
+      <li><a href="#">故人隐</a></li>
+      <li><a href="#">风住长街</a></li>
+      <li><a href="#">你好我是无望</a></li>
+      <li><a href="#">妖精女仆长琪露诺</a></li>
+      <li><a href="#">薇妮莎</a></li>
+      <li><a href="#">Threethree小胖</a></li>
+      <li><a href="#">L1ttledream</a></li>
+      <li><a href="#">倉山レずは</a></li>
+      <li><a href="#">豆美丽与瓜英俊</a></li>
+      <li><a href="#">十八歲腐つ</a></li>
+      <li><a href="#">た少年</a></li>
+      <li><a href="#">Kouda</a></li>
+      <li><a href="#">Zbq</a></li>
+      <li><a href="#">帕特里克</a></li>
+      <li><a href="#">柯拉萨温</a></li>
+      <li><a href="#">迷鹿小谷主</a></li>
+      <li><a href="#">一只方方兔</a></li>
+      <li><a href="#">路旁的叶修</a></li>
+      <li><a href="#">卡夫卡松饼君</a></li>
+      <li><a href="#">何野ge</a></li>
+      <li><a href="#">花山妮娅</a></li>
+      <li><a href="#">花山拿official</a></li>
+      <li><a href="#">咚咚咚咚咚东云</a></li>
+      <li><a href="#">祖娅纳惜的老婆</a></li>
+      <li><a href="#">疏科ryuko</a></li>
+      <li><a href="#">端庄优雅弥生酱</a></li>
+      <li><a href="#">一只罗宝啊</a></li>
+      <li><a href="#">英茬chaaa</a></li>
+      <li><a href="#">狂少风</a></li>
+      <li><a href="#">红格立夏夏</a></li>
+      <li><a href="#">抗癌战争</a></li>
+      <li><a href="#">一只不怎么样的干脆面</a></li>
+      <li><a href="#">是奶茶嗷</a></li>
+      <li><a href="#">月野奈奈子channel</a></li>
+      <li><a href="#">Saint</a></li>
+      <li><a href="#">路易</a></li>
+      <li><a href="#">Pokonl</a></li>
+      <li><a href="#">东方伊芷</a></li>
+      <li><a href="#">凤鸾</a></li>
+      <li><a href="#">哆啦a梦duola</a></li>
+      <li><a href="#">和师姐肩并肩</a></li>
+      <li><a href="#">我爱快龙</a></li>
+      <li><a href="#">连橙丶</a></li>
+      <li><a href="#">澳洲红茶</a></li>
+      <li><a href="#">不甜的艾斯克瑞姆</a></li>
+      <li><a href="#">战神的终结</a></li>
+      <li><a href="#">Tohru</a></li>
+      <li><a href="#">青青问问额额</a></li>
+      <li><a href="#">无尽的久违沉醉</a></li>
+      <li><a href="#">寒敲白玉</a></li>
+      <li><a href="#">Rlcymmot</a></li>
+      <li><a href="#">我才是你队友</a></li>
+      <li><a href="#">桃金娘的方舟桌布</a></li>
+      <li><a href="#">猫街的鱼</a></li>
+      <li><a href="#">醉酒的蝴蝶仙子</a></li>
+      <li><a href="#">祈愿君安酱</a></li>
+      <li><a href="#">公交迷小史</a></li>
+      <li><a href="#">Alanmackin</a></li>
+      <li><a href="#">甘子恒</a></li>
+      <li><a href="#">夜蹴shark</a></li>
+      <li><a href="#">死馆</a></li>
+      <li><a href="#">美亚</a></li>
+      <li><a href="#">请不要再给我流量了</a></li>
+      <li><a href="#">悼念</a></li>
+      <li><a href="#">陈祥旭一路走好</a></li>
+      <li><a href="#">张大美zz</a></li>
+      <li><a href="#">Dtl佩琦</a></li>
+      <li><a href="#">黑魔法师怀特</a></li>
+      <li><a href="#">象曰</a></li>
+      <li><a href="#">一排大石头</a></li>
+      <li><a href="#">Withered</a></li>
+      <li><a href="#">Bonnie</a></li>
+      <li><a href="#">云水香间</a></li>
+      <li><a href="#">阿柠今天也不会画画呢</a></li>
+      <li><a href="#">Margarita</a></li>
+      <li><a href="#">Forest</a></li>
+      <li><a href="#">榨干6651听</a></li>
+      <li><a href="#">サワダッナ</a></li>
+      <li><a href="#">虎子的后半生</a></li>
+      <li><a href="#">The</a></li>
+      <li><a href="#">Bomm</a></li>
+      <li><a href="#">虚度人士</a></li>
+      <li><a href="#">本人已身亡</a></li>
+      <li><a href="#">Huo埋</a></li>
+      <li><a href="#">狐狸ghost</a></li>
+      <li><a href="#">与癌同行有爱相随</a></li>
+      <li><a href="#">纵欲的阿昆达</a></li>
+      <li><a href="#">这里有一只漂灵</a></li>
+      <li><a href="#">云汉斯</a></li>
+      <li><a href="#">我是小旺旺</a></li>
+      <li><a href="#">丹阳映金坛</a></li>
+      <li><a href="#">冷光</a></li>
+      <li><a href="#">中箭君qaq</a></li>
+      <li><a href="#">Moonbyul飘里</a></li>
+      <li><a href="#">子沐</a></li>
+      <li><a href="#">安らく園</a></li>
+      <li><a href="#">小粪球和我过的很好</a></li>
+      <li><a href="#">日常爆肝的momo</a></li>
+      <li><a href="#">请叫我学姐夫</a></li>
+      <li><a href="#">Foldin</a></li>
+      <li><a href="#">雅鲁藏布江女人</a></li>
+      <li><a href="#">Deathtea</a></li>
+      <li><a href="#">快乐小狗ddoggie</a></li>
+      <li><a href="#">鹿道森</a></li>
+      <li><a href="#">无耳老宅</a></li>
+      <li><a href="#">爆炒充电宝</a></li>
+      <li><a href="#">Aqourse</a></li>
+      <li><a href="#">Xiaoshao233</a></li>
+      <li><a href="#">角落一只菇</a></li>
+      <li><a href="#">肉肉的小瓜</a></li>
+      <li><a href="#">白芬芳</a></li>
+      <li><a href="#">轻废废</a></li>
+      <li><a href="#">不可名状酱</a></li>
+      <li><a href="#">刘钦本尊</a></li>
+      <li><a href="#">画风不一样的雪叔</a></li>
+      <li><a href="#">Maqtya</a></li>
+      <li><a href="#">Pudding</a></li>
+      <li><a href="#">糖麦天下第一</a></li>
+      <li><a href="#">蒋小鹏大战肿瘤君</a></li>
+      <li><a href="#">黑暗中的板砖</a></li>
+      <li><a href="#">二战贴吧摄像大哥</a></li>
+      <li><a href="#">Charlottenita</a></li>
+      <li><a href="#">希羽丶殇</a></li>
+      <li><a href="#">和我说次晚安吗</a></li>
+      <li><a href="#">忆云之风vlog</a></li>
+      <li><a href="#">麒霖</a></li>
+      <li><a href="#">一只沈默</a></li>
+      <li><a href="#">Saoriyuki1948</a></li>
+      <li><a href="#">墨茶official</a></li>
+      <li><a href="#">清影流殇</a></li>
+      <li><a href="#">混沌八二</a></li>
+      <li><a href="#">假设我是个诗人</a></li>
+      <li><a href="#">学影社大飞</a></li>
+      <li><a href="#">一只鸽子</a></li>
+      <li><a href="#">阿咕</a></li>
+      <li><a href="#">I8aumt</a></li>
+      <li><a href="#">汐月星染</a></li>
+      <li><a href="#">Official</a></li>
+      <li><a href="#">知天易解说群内</a></li>
+      <li><a href="#">Aka饼干一点都不憨</a></li>
+      <li><a href="#">爺只是怕錯過丶</a></li>
+      <li><a href="#">网抑云neteasecloud</a></li>
+      <li><a href="#">爱纯</a></li>
+      <li><a href="#">Mpb旁听者</a></li>
+      <li><a href="#">最爱你们的黛西</a></li>
+      <li><a href="#">永别</a></li>
+      <li><a href="#">Charles</a></li>
+      <li><a href="#">古今亦如梦</a></li>
+      <li><a href="#">刘不言西医综合</a></li>
+      <li><a href="#">木亢熊</a></li>
+      <li><a href="#">红雨老师714</a></li>
+      <li><a href="#">耀杨他姥爷</a></li>
+      <li><a href="#">Deer孙侨潞</a></li>
+      <li><a href="#">猹的好朋友小花</a></li>
+      <li><a href="#">陈阳xcm</a></li>
+      <li><a href="#">Thedld007</a></li>
+      <li><a href="#">水原なぎさ</a></li>
+      <li><a href="#">雷龙</a></li>
+      <li><a href="#">Thunder</a></li>
+      <li><a href="#">250w厨房</a></li>
+      <li><a href="#">浅浅浅浅浅呐</a></li>
+      <li><a href="#">巴甫洛夫的下酒菜</a></li>
+      <li><a href="#">Hd1080</a></li>
+      <li><a href="#">噶还剩下</a></li>
+      <li><a href="#">谢糖糖vlog</a></li>
+      <li><a href="#">野生的deane</a></li>
+      <li><a href="#">泠幽玄影</a></li>
+      <li><a href="#">羽落无铭</a></li>
+      <li><a href="#">俄罗斯烧烤老爹</a></li>
+      <li><a href="#">Yuyeoffi</a></li>
+      <li><a href="#">千红刃</a></li>
+      <li><a href="#">Shiki</a></li>
+      <li><a href="#">Music</a></li>
+      <li><a href="#">99玫瑰华</a></li>
+      <li><a href="#">冰河丶天冰</a></li>
+      <li><a href="#">长夜予我</a></li>
+      <li><a href="#">喝口水长大</a></li>
+      <li><a href="#">流落的牧羊人</a></li>
+      <li><a href="#">木木有吾亦为福</a></li>
+      <li><a href="#">月兔是只猫</a></li>
+      <li><a href="#">Fadedneko</a></li>
+      <li><a href="#">水墨轩cg资源网</a></li>
+      <li><a href="#">白皇の流光</a></li>
+      <li><a href="#">茔肆</a></li>
+      <li><a href="#">累傻了</a></li>
+      <li><a href="#">动词和代词x</a></li>
+      <li><a href="#">黑暗地牢建设者</a></li>
+      <li><a href="#">明日方舟</a></li>
+      <li><a href="#">羽毛笔</a></li>
+      <li><a href="#">飞天黑子</a></li>
+      <li><a href="#">英属三角坡</a></li>
+      <li><a href="#">小飞与爱笑的冉姑娘</a></li>
+      <li><a href="#">蚊子失踪的那个夏天</a></li>
+      <li><a href="#">我爱鱼罐头</a></li>
+      <li><a href="#">肥肥肥鼠</a></li>
+      <li><a href="#">吴老旺</a></li>
+      <li><a href="#">想要身体健康的言妻</a></li>
+      <li><a href="#">全班之wu名氏</a></li>
+      <li><a href="#">Roastrigger</a></li>
+      <li><a href="#">叫我虾饺sama</a></li>
+      <li><a href="#">暗寂无声</a></li>
+      <li><a href="#">一只逐梦汪</a></li>
+      <li><a href="#">自由人黎</a></li>
+      <li><a href="#">Monster</a></li>
+      <li><a href="#">Egg</a></li>
+      <li><a href="#">动下</a></li>
+      <li><a href="#">Kinescope</a></li>
+      <li><a href="#">Act</a></li>
+      <li><a href="#">憨憨猫wxx</a></li>
+      <li><a href="#">雁魚</a></li>
+      <li><a href="#">小冇聪</a></li>
+      <li><a href="#">遗弃的人666</a></li>
+      <li><a href="#">13790880354</a></li>
+      <li><a href="#">沙耶香酱的幼驯染</a></li>
+      <li><a href="#">卑微的娃子</a></li>
+    </ul>
+  </canvas>
+</div>
+<div class="box" style="width:100%;height:180px;">
+  <p class="text" style="width:66%;padding-left:18%;text-align:justify;margin-top:40px">
+    根据b站纪念账号收集君的整理，2014年至2021年b站粉丝大于等于1000的up主共280人离世。
+    截至2022年12月19日，共有10位up主被列为纪念账号，超过90%的逝世up主账号没有被b站官方处理为纪念账号。
+    大多数账号在逝者离世后处于无人继承或曾由未知人士登录的状态，少部分账号由亲人、好友或运营团队接管。
+  </p>
+  <p class="text" style="width:66%;padding-left:18%;text-align:justify;margin-top:40px">
+    up主逝世的原因中，疾病和自杀占据多数。
+    疾病离世的up主由亲人继承账号的比例大于由好友继承，自杀离世的则反之。
+  </p>
+</div>
+
+<!-- 桑吉图-->
+<div class="box" style="margin:0 auto;width:100%;height:540px;">
+  <div id="san" style="width:86%;height:540px;left:7%">
+  <script type="text/javascript">
+    var chartDom = document.getElementById('san');
+    var myChart = echarts.init(chartDom, 'purple-passion');
+    var option;
+
+    option = {
+    tooltip: {
+      trigger: 'item',
+      triggerOn: 'mousemove'
+    },
+    animation: false,
+    series: [
+      {
+        type: 'sankey',
+        bottom: '10%',
+        emphasis: {
+          focus: 'adjacency'
+        },
+
+        data: [
+          { name: '2014' },
+          { name: '2015' },
+          { name: '2016' },
+          { name: '2017' },
+          { name: '2018' },
+          { name: '2019' },
+          { name: '2020' },
+          { name: '2021' },
+
+          { name: '疾病' },
+          { name: '意外' },
+          { name: '自杀' },
+          { name: '车祸' },
+          { name: '不详' },
+          { name: '猝死' },
+
+          { name: '未知人士' },
+          { name: '无人处理' },
+          { name: '好友' },
+          { name: '亲人' },
+          { name: '他人' },
+          { name: '纪念账号' },
+          { name: '注销' },
+          { name: '购买' },
+          { name: '被盗' }
+        ],
+        links: [
+          { source: '2014', target: '疾病', value: 1 },
+          { source: '2014', target: '意外', value: 1 },
+          { source: '2014', target: '自杀', value: 1 },
+          { source: '2015', target: '车祸', value: 1 },
+          { source: '2015', target: '疾病', value: 4 },
+          { source: '2015', target: '自杀', value: 1 },
+          { source: '2016', target: '不详', value: 2 },
+          { source: '2016', target: '猝死', value: 1 },
+          { source: '2016', target: '疾病', value: 4 },
+          { source: '2017', target: '疾病', value: 8 },
+          { source: '2017', target: '意外', value: 1 },
+          { source: '2017', target: '自杀', value: 2 },
+          { source: '2018', target: '不详', value: 3 },
+          { source: '2018', target: '车祸', value: 2 },
+          { source: '2018', target: '疾病', value: 9 },
+          { source: '2018', target: '意外', value: 2 },
+          { source: '2018', target: '自杀', value: 13 },
+          { source: '2019', target: '不详', value: 4 },
+          { source: '2019', target: '车祸', value: 1 },
+          { source: '2019', target: '猝死', value: 3 },
+          { source: '2019', target: '疾病', value: 18 },
+          { source: '2019', target: '意外', value: 2 },
+          { source: '2019', target: '自杀', value: 13 },
+          { source: '2020', target: '不详', value: 4 },
+          { source: '2020', target: '车祸', value: 3 },
+          { source: '2020', target: '猝死', value: 2 },
+          { source: '2020', target: '疾病', value: 31 },
+          { source: '2020', target: '意外', value: 3 },
+          { source: '2020', target: '自杀', value: 22 },
+          { source: '2021', target: '不详', value: 6 },
+          { source: '2021', target: '车祸', value: 4 },
+          { source: '2021', target: '猝死', value: 5 },
+          { source: '2021', target: '疾病', value: 43 },
+          { source: '2021', target: '意外', value: 9 },
+          { source: '2021', target: '自杀', value: 42 },
+
+          { source: '不详', target: '好友', value: 3 },
+          { source: '不详', target: '纪念账号', value: 6 },
+          { source: '不详', target: '亲人', value: 1 },
+          { source: '不详', target: '他人', value: 2 },
+          { source: '不详', target: '未知人士', value: 9 },
+          { source: '不详', target: '无人处理', value: 5 },
+          { source: '车祸', target: '好友', value: 2 },
+          { source: '车祸', target: '亲人', value: 3 },
+          { source: '车祸', target: '未知人士', value: 4 },
+          { source: '车祸', target: '无人处理', value: 2 },
+          { source: '猝死', target: '亲人', value: 1 },
+          { source: '猝死', target: '他人', value: 2 },
+          { source: '猝死', target: '未知人士', value: 6 },
+          { source: '猝死', target: '无人处理', value: 2 },
+          { source: '疾病', target: '好友', value: 13 },
+          { source: '疾病', target: '纪念账号', value: 2 },
+          { source: '疾病', target: '亲人', value: 21 },
+          { source: '疾病', target: '他人', value: 6 },
+          { source: '疾病', target: '未知人士', value: 53 },
+          { source: '疾病', target: '无人处理', value: 22 },
+          { source: '疾病', target: '注销', value: 1 },
+          { source: '意外', target: '好友', value: 1 },
+          { source: '意外', target: '纪念账号', value: 1 },
+          { source: '意外', target: '他人', value: 1 },
+          { source: '意外', target: '未知人士', value: 8 },
+          { source: '意外', target: '无人处理', value: 7 },
+          { source: '自杀', target: '被盗', value: 1 },
+          { source: '自杀', target: '购买', value: 1 },
+          { source: '自杀', target: '好友', value: 15 },
+          { source: '自杀', target: '纪念账号', value: 1 },
+          { source: '自杀', target: '亲人', value: 5 },
+          { source: '自杀', target: '他人', value: 2 },
+          { source: '自杀', target: '未知人士', value: 50 },
+          { source: '自杀', target: '无人处理', value: 20 },
+          { source: '自杀', target: '注销', value: 1 }
+        ],
+        orient: 'vertical',
+        label: {
+          position: 'top',
+          color:'#ccc'
+        },
+        lineStyle: {
+          color: 'source',
+          curveness: 0.5
+        },
+        color: [
+          "#cc54d0",
+      "#1aaff2",
+      "#8fd3e8",
+      "#f394f8",
+      "#f7d967",
+      "#ffffff",
+      "#cc54d0",
+      "#1aaff2",
+      "#8fd3e8",
+      "#f394f8",
+            ]
+      }
+    ]
+  };
+   option && myChart.setOption(option);
+  </script>
+</div>
+</div>
+
+<!-- 李文亮 -->
+<div class="box" style="width:100%;height:820px;">
+  <h3 style="padding-top:40px;margin-bottom:20px">还为离人照落花</h3><br>
+  <p class="text" style="width:66%;padding-left:18%;text-align:justify">
+    「多情只有春庭月，犹为离人照落花」那些追忆离人的生者，时常回到离人的赛博庭院，留下只言片语。</p>
+  <p class="text" style="width:66%;padding-left:18%;text-align:justify">
+    在赛博空间，哀悼者通常并不互相交流，而是与逝者“直接对话”。集体悼念成为人们寄托对逝者亡灵思念的方式。
+    新冠疫情吹哨人李文亮医生的生前微博留言区作为在线哀悼社区，将五湖四海的人们纳入集体悼念之中。</p>
+  <p class="text" style="width:66%;padding-left:18%;text-align:justify">
+    截至2022年12月21日12：00，距离医生其最后一条微博（2020年2月1日10：41）发布已经过去了1045天，
+    评论区留下了2055818条评论，平均每天有1967条新的对话出现在李文亮最后一条微博的评论区中。
+  </p>
+  <div id="net" style="width:100%;height:540px;">
+    </div>
+
+    <script type="text/javascript">
+    var chartDom = document.getElementById('net');
+    var myChart = echarts.init(chartDom);
+    var option;
+    // myChart.showLoading();
+    $.getJSON('json/lwl.json', function (graph) {
+    myChart.hideLoading();
+    option = {
+      tooltip: {},
+      legend: [
+        {
+          data: graph.categories.map(function (a) {
+            return a.name;
+          })
+        }
+      ],
+      label: {
+        position: 'top',
+        color:'#ccc'
+      },
+      lineStyle: {
+        color: 'source',
+        curveness: 0.5
+      },
+      color: [
+    "#fff",
+    "#e1664c",
+    "#8fd3e8",
+    "#ad78f0",
+  ],
+      series: [
+        {
+          name: 'Les Miserables',
+          type: 'graph',
+          layout: 'none',
+          data: graph.nodes,
+          links: graph.links,
+          categories: graph.categories,
+          roam: true,
+          label: {
+            show: true,
+            position: 'right',
+            formatter: '{b}'
+          },
+          labelLayout: {
+            hideOverlap: true
+          },
+          scaleLimit: {
+            min: 0.4,
+            max: 2
+          },
+          lineStyle: {
+            color: 'source',
+            curveness: 0.3
+          }
+        }
+      ]
+    };
+    myChart.setOption(option);
+    });
+  </script>
+</div>
+
     </body>
+
+
 </html>
