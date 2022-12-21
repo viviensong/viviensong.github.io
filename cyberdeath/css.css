@@ -23,7 +23,7 @@ body {
   background-repeat: no-repeat, no-repeat;
   /* //没有覆盖到的区域不会被图片重叠来填充 */
   background-position: top center, center center;
-  background-size: 100% 20%;
+  background-size: 100% 8%;
 }
 
 h2 {
@@ -54,6 +54,13 @@ h3 {
 
 .text{
   color: #fff;
+  font-family: Microsoft JhengHei;
+  text-align: center;
+}
+
+.foot{
+  font-size:12px;
+  color: rgba(225,225,225,0.6);
   font-family: Microsoft JhengHei;
   text-align: center;
 }
