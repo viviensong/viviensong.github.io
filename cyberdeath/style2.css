@@ -17,6 +17,8 @@
 
 .tree ul {
     padding-top: 20px;
+    margin-left: -22px;
+    margin-right: 22px;
     position: relative;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
@@ -93,7 +95,7 @@
     content: '';
     position: absolute;
     top: 0;
-    left: 50%;
+    /* left: 50%; */
     border-left: 2px solid #1aaff2;
     width: 0;
     height: 20px;
@@ -118,11 +120,11 @@
 }
 
 .tree li div .male {
-    background-color: #cc54d0;
+    background-color: #f394f8;
     display: inline-block;
     width: 60px;
-    padding: 10px;
-    border-radius: 12px;
+    padding: 8px;
+    border-radius: 10px;
     font-size: 14px;
     font-family: Microsoft JhengHei;
     font-weight: bold;
