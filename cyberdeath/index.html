@@ -1445,9 +1445,10 @@
   <!-- 一周记录 -->
   <div class="box" style="width:100%;height:540px;">
     <p class="text" style="width:66%;padding-left:18%;text-align:justify">
+      2022年12月，将近三年的疫情迎来逐步放开的尾声。
+      我们爬取了2022「年12月12日（周一）至12月18日（周日）整一周的5219条评论（124231字），构建出语义网络。
       在这一周的时间里，晚上8点至凌晨1点是新增评论最多的时间段，中午12点左右评论的人也较多。
-      12月13日凌晨，由于全国“健康码”下线，前来评论的人很多。网友「清风的稻草人」评论：“李医生，疫情三年都官宣这是要结束了，可我却觉得这才是刚刚开始，从没有这么赤裸裸的直面病毒。”
-    </p>
+      12月13日凌晨，由于全国“健康码”下线，前来评论的人很多。</p>
     <div id="day" style="width:68%;height:460px;"></div>
     <script type="text/javascript">
       var chartDom = document.getElementById('day');
@@ -1669,8 +1670,10 @@
       });
       option = {
       tooltip: {
-        position: 'top'
+        position: 'top'，
+        color:'#fff',
       },
+
       title: title,
       color: [
         '#cc54d0',
@@ -1692,8 +1695,9 @@
     </script>
 
   <p class="text" style="width:66%;padding-left:18%;text-align:justify">
-    2022年12月，将近三年的疫情迎来逐步放开的尾声。李文亮医生的赛博庭院人来人往。
-    我们爬取了2022「年12月12日（周一）至12月18日（周日）整一周的5219条评论（124231字），构建出语义网络。
+    李文亮医生的赛博庭院人来人往。网友「清风的稻草人」评论：“李医生，疫情三年都官宣这是要结束了，
+    可我却觉得这才是刚刚开始，从没有这么赤裸裸的直面病毒。”我们通过构建语义网络将网友的5千多条评论信息进行关联。
+
   </p>
   <div id="net" style="width:100%;height:460px">
     </div>
@@ -1714,6 +1718,12 @@
           })
         }
       ],
+      legend: {
+        top: "0%",
+        textStyle: {
+        color: "#fff"
+      }
+      },
       label: {
         position: 'top',
         color:'#ccc'
@@ -1737,6 +1747,7 @@
           links: graph.links,
           categories: graph.categories,
           roam: true,
+
           label: {
             show: true,
             position: 'right',
